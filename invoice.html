@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Invoice</title></head>
+<body>
+  <h1>Invoice</h1>
+  <p>Plan: <span id="plan"></span></p>
+  <p>Amount: ₹<span id="amount"></span></p>
+  <p>Date: <span id="date"></span></p>
+  <button onclick="window.print()">Print</button>
+  <script>
+    const p = new URLSearchParams(window.location.search);
+    document.getElementById('plan').textContent = p.get('plan');
+    document.getElementById('amount').textContent = p.get('amount');
+    document.getElementById('date').textContent = new Date().toLocaleDateString();
+  </script>
+</body>
+</html>
